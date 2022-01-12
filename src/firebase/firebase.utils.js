@@ -12,6 +12,8 @@ const config ={
     measurementId: "G-TX0MW82GTR"
   };
 
+  firebase.initializeApp(config);
+
   export const createUserProfileDocument = async(userAuth, additionalData) =>{
     if (!userAuth) return;
 
@@ -42,7 +44,6 @@ const config ={
     return userRef;
   }
 
-  firebase.initializeApp(config);
 
   export const auth = firebase.auth();
   export const firestore = firebase.firestore();
