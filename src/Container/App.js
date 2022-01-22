@@ -41,13 +41,12 @@ class App extends React.Component{
   }
   
   render() {
-    console.log(this.props.currentUser)
   return (
     <div>
       <Header/>
         <Routes>
           <Route exact path='/' element={<HomePage/>}/>
-          <Route path='/shop' element={<ShopPage/>}/>
+          <Route path='/shop/*' element={<ShopPage/>}/>
           <Route exact path='/checkout' element={<CheckoutPage/>}/>
           <Route path='/signin' 
           element={!this.props.currentUser ? <Navigate replace to="/" /> : <SignInAndSignUpPage />}
